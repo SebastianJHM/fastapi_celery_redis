@@ -3,8 +3,8 @@ import uvicorn
 from celery import Celery
 
 app = FastAPI()
-# simple_app = Celery('simple_worker', broker='redis://redis:6379/0', backend='redis://redis:6379/0')
-simple_app = Celery('tasks', backend='redis://localhost:6379', broker='redis://localhost:6379')
+simple_app = Celery('simple_worker', broker='redis://redis:6379/0', backend='redis://redis:6379/0')
+# simple_app = Celery('tasks', backend='redis://localhost:6379', broker='redis://localhost:6379')
 
 @app.get('/')
 def init():

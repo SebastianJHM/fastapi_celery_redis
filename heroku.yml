@@ -1,0 +1,15 @@
+setup:
+  addons:
+    - plan: heroku-redis
+      as: REDIS
+build:
+  docker:
+    web: app/Dockerfile
+    worker: worker_tasks/Dockerfile
+# run:
+#   web: 
+#     command: uvicorn app:app --host 0.0.0.0 --port $PORT
+#     image: web
+#   worker: 
+#     command: celery -A tasks worker --loglevel=info --concurrency=1
+#     image: worker

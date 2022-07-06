@@ -11,7 +11,7 @@ ADD requirements.txt /tmp/requirements.txt
 RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
 #COPY app.py /app.py
-ADD . /simple_worker
-WORKDIR /simple_worker
+ADD . /worker_tasks
+WORKDIR /worker_tasks
 
 ENTRYPOINT celery -A tasks worker --loglevel=info
